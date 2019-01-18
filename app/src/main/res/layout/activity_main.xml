@@ -6,12 +6,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
     <Button
-        android:id="@+id/btn_xml"
+        android:id="@+id/btn_lifecycle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Xml解析"
-        android:textAllCaps="false" />
+        android:text="生命周期" />
 
     <Button
         android:id="@+id/btn_intent"
@@ -21,16 +21,19 @@
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/btn_lifecycle"
+        android:id="@+id/btn_xml"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="生命周期" />
+        android:text="Xml解析"
+        android:textAllCaps="false" />
+
     <Button
-        android:textAllCaps="false"
         android:id="@+id/btn_commonview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="常见View" />
+        android:text="常见View"
+        android:textAllCaps="false" />
+
     <Button
         android:id="@+id/btn_recycleview"
         android:layout_width="match_parent"
