@@ -4,7 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
+
+    <chapter.android.aweme.ss.com.homework.widget.CircleImageView
+        android:id="@+id/circle_view"
+        android:layout_width="48dp"
+        android:layout_height="48dp" />
 
     <Button
         android:id="@+id/btn_exercises1"

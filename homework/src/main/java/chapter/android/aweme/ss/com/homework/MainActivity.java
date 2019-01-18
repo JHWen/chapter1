@@ -1,9 +1,12 @@
 package chapter.android.aweme.ss.com.homework;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import chapter.android.aweme.ss.com.homework.widget.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -11,6 +14,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        CircleImageView circleImageView = findViewById(R.id.circle_view);
+        circleImageView.setImageResource(R.drawable.icon_micro_game_comment);
         findViewById(R.id.btn_exercises1).setOnClickListener(this);
         findViewById(R.id.btn_exercises2).setOnClickListener(this);
         findViewById(R.id.btn_exercises3).setOnClickListener(this);
