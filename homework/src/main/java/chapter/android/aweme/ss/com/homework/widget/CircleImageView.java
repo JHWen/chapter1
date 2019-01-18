@@ -41,6 +41,7 @@ public class CircleImageView extends AppCompatImageView {
         path = new Path();
 
         xfermode = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
+        setScaleType(ScaleType.CENTER_CROP);
     }
 
 
