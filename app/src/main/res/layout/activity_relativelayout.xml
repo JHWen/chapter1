@@ -102,17 +102,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_center"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="头条"
         android:textAllCaps="false" />
 
     <TextView
+        android:padding="16dp"
         android:id="@+id/tv_center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="#c90"
-        android:padding="16dp"
         android:text="字节跳动"
         android:textColor="@color/colorAccent"
         android:textSize="28sp" />
