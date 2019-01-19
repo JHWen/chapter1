@@ -9,9 +9,13 @@ import android.widget.TextView;
 
 import chapter.android.aweme.ss.com.chapter1.R;
 
+/**
+ *
+ *
+ */
 public class SaveInstanceStateActivity extends AppCompatActivity {
 
-    private static final String TAG = "wangyi";
+    private static final String TAG = "SaveInstance";
 
     private static final String ON_CREATE = "onCreate";
     private static final String ON_START = "onStart";
@@ -21,6 +25,7 @@ public class SaveInstanceStateActivity extends AppCompatActivity {
     private static final String ON_RESTART = "onRestart";
     private static final String ON_DESTROY = "onDestroy";
     private static final String ON_SAVE_INSTANCE_STATE = "onSaveInstanceState";
+
     private static final String LIFECYCLE_CALLBACKS_TEXT_KEY = "callbacks";
 
     private TextView mLifecycleDisplay;
@@ -30,7 +35,7 @@ public class SaveInstanceStateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saveinstance);
         mLifecycleDisplay = findViewById(R.id.tv_loglifecycle);
-        if (savedInstanceState != null) {
+        if (savedInstanceState != null) { //当Activity重建的时候不为空
             if (savedInstanceState.containsKey(LIFECYCLE_CALLBACKS_TEXT_KEY)) {
                 String savedContent = (String) savedInstanceState.get(LIFECYCLE_CALLBACKS_TEXT_KEY);
                 mLifecycleDisplay.setText(savedContent);
@@ -84,6 +89,7 @@ public class SaveInstanceStateActivity extends AppCompatActivity {
     public void resetLifecycleDisplay(View view) {
         mLifecycleDisplay.setText("Lifecycle callbacks:\n");
     }
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

@@ -1,8 +1,10 @@
 package chapter.android.aweme.ss.com.chapter1.lifecycle;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -46,22 +48,21 @@ public class LifeCycleActivity extends AppCompatActivity {
     }
 
     public void showUpgradeDialog(View view) {
-//        new AlertDialog.Builder(this)
-//                .setTitle("应用升级")
-//                .setMessage("抖音1.1版本升级")
-//                .setPositiveButton("取消", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//
-//                    }
-//                })
-//                .setNegativeButton("确定", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//
-//                    }
-//                }).create().show();
-        startActivity(new Intent(this, DialogActivity.class));
+        new AlertDialog.Builder(this)
+                .setTitle("应用升级")
+                .setMessage("抖音1.1版本升级")
+                .setPositiveButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setNegativeButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).create().show();
     }
 
     @Override

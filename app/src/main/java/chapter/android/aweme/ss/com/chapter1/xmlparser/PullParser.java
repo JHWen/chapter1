@@ -25,7 +25,7 @@ public class PullParser {
         XmlPullParser parser = Xml.newPullParser();
         ///初始化xmlPull解析器
         parser.setInput(is, "utf-8");
-        //读取文件的类型
+        //读取文件的类型`
         int type = parser.getEventType();
         //无限判断文件类型进行读取
         while (type != XmlPullParser.END_DOCUMENT) {

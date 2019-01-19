@@ -20,6 +20,13 @@
         android:onClick="customImplicit"
         android:text="自定义隐式intent" />
 
+    <Button
+        android:id="@+id/btn_custom_implicit_no_match"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="noMatch"
+        android:text="隐式intent未命中" />
+
 
     <Button
         android:id="@+id/btn_setting"
@@ -27,16 +34,6 @@
         android:layout_height="wrap_content"
         android:onClick="wechatAuthorize"
         android:text="仿微信授权"
-        android:textAllCaps="false"
-        android:textStyle="normal" />
-
-
-    <Button
-        android:id="@+id/btn_choose_contact"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="chooseContact"
-        android:text="选择联系人"
         android:textAllCaps="false"
         android:textStyle="normal" />
 

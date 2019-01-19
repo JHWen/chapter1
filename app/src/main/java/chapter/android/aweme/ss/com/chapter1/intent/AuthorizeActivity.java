@@ -45,48 +45,11 @@ public class AuthorizeActivity extends AppCompatActivity {
             @Override
             public void run() {
                 mAuthorizeLoading.hide();
-                //这里顺带讲解了携带Serializable
                 Intent data = new Intent();
-                data.putExtra(AUTHOR_STATE, Resource.success("token-tiktok"));
-                setResult(AUTHOR_CODE, data);
+                data.putExtra(AUTHOR_STATE, "success!");
+                setResult(AUTHOR_CODE, data);//代表返回的标识符
                 finish();
             }
         }, 1500L);
-    }
-
-    public static class Resource<T> implements Serializable { //这里带着把Serializable 也讲了
-
-        @NonNull
-        public final Status status;
-
-        @Nullable
-        public final T data;
-
-        private Resource(@NonNull Status status, @Nullable T data) {
-            this.status = status;
-            this.data = data;
-        }
-
-        @Override
-        public String toString() {
-            return "Resource{" +
-                    "status=" + status +
-                    ", data=" + data +
-                    '}';
-        }
-
-        public static <T> Resource<T> success(@NonNull T data) {
-            return new Resource<>(Status.SUCCESS, data);
-        }
-
-        public static <T> Resource<T> error(String msg, @Nullable T data) {
-            return new Resource<>(Status.ERROR, data);
-        }
-
-        public static <T> Resource<T> failed(@Nullable T data) {
-            return new Resource<>(Status.FAILED, data);
-        }
-
-        public enum Status {SUCCESS, ERROR, FAILED}
     }
 }

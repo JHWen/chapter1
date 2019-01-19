@@ -29,6 +29,13 @@ public class IntentActivity extends AppCompatActivity {
         mButtonSetting = findViewById(R.id.btn_setting);
     }
 
+
+    public void noMatch(View view) {
+        Intent it = new Intent();
+        it.setAction("this is a not match action");
+        startActivity(it);
+    }
+
     /**
      * 隐式intent预埋
      *
@@ -71,56 +78,19 @@ public class IntentActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_CODE);//带着讲 forResult
     }
 
-    /**
-     * startActivityForResult 隐式
-     * 选择联系人姓名
-     *
-     * @param view
-     */
-    public void chooseContact(View view) {
-        Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-        //REQUEST_CODE为自定义的请求码
-        startActivityForResult(intent, REQUEST_CODE);
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE && resultCode == AuthorizeActivity.AUTHOR_CODE) {
             if (data != null) {
-                AuthorizeActivity.Resource<String> result = (AuthorizeActivity.Resource) data.getSerializableExtra(AuthorizeActivity.AUTHOR_STATE);
-                String authMsg = "";
-                switch (result.status) {
-                    case ERROR:
-                        authMsg = "授权异常";
-                        break;
-                    case FAILED:
-                        authMsg = "授权失败";
-                        break;
-                    case SUCCESS:
-                        authMsg = "授权成功|" + result.data;
-                        break;
-                }
+                String authMsg = data.getStringExtra(AuthorizeActivity.AUTHOR_STATE);
                 Toast.makeText(this, authMsg, Toast.LENGTH_SHORT).show();
                 mButtonSetting.setTextColor(getResources().getColor(R.color.colorAccent));
                 mButtonSetting.setText(authMsg);
             }
-        } else if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
-            Uri uri = data.getData();
-            //content://com.android.contacts/contacts/lookup/3640i15de78e48cb38a25/419
-            //具体的ContentProvider的内容 由专门的课程讲解，这里只是为了演示效果
-            Cursor cursor = getContentResolver().query(uri, null, null, null, null);
-            //查询联系人姓名的方法
-            if (cursor != null) {
-                String contactName = getContactName(cursor);
-                mContactName.setText(contactName);
-            }
         }
     }
 
-    private static String getContactName(Cursor cursor) {
-        cursor.moveToFirst();
-        return cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-    }
 
 }
