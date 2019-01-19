@@ -19,31 +19,32 @@
         android:text="左对齐"
         android:textAllCaps="false"
         android:textSize="13sp" />
+
     <Button
-        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@id/tv_center"
+        android:layout_alignParentBottom="true"
         android:text="右对齐"
         android:textAllCaps="false"
         android:textSize="13sp" />
 
     <TextView
-        android:textColor="@color/material400Green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/tv_center"
         android:text="上对齐"
         android:textAllCaps="false"
+        android:textColor="@color/material400Green"
         android:textSize="13sp" />
 
     <TextView
-        android:textColor="@color/material400Green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/tv_center"
         android:text="下对齐"
         android:textAllCaps="false"
+        android:textColor="@color/material400Green"
         android:textSize="13sp" />
 
     <Button
@@ -101,19 +102,20 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_center"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:text="头条"
         android:textAllCaps="false" />
 
     <TextView
-        android:background="#c90"
-        android:padding="16dp"
         android:id="@+id/tv_center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:background="#c90"
+        android:padding="16dp"
         android:text="字节跳动"
         android:textColor="@color/colorAccent"
         android:textSize="28sp" />
 
-
+    <!--padding margin的概念 -->
 </RelativeLayout>
